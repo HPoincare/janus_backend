@@ -7,7 +7,7 @@ import librosa
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST"]}})
 client = MongoClient('mongodb+srv://janus_dev:no_longer_temp_name@janus.8bvovej.mongodb.net/?retryWrites=true&w=majority')
 db = client.mydatabase
 
